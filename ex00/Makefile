@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = animal
-SRC = Animal.cpp Cat.cpp Dog main.cpp
+SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ_DIR = bin
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
