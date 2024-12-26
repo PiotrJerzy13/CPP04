@@ -1,0 +1,5 @@
+*.pdf
+*.txt
+*.o
+.DS_Store
+.vscode
