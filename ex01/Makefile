@@ -4,8 +4,8 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98 -I../ex00
 NAME = animals
 OBJ_DIR = bin
 
-SRC = main.cpp Brain.cpp Dog.cpp Cat.cpp
-EX00_SRC = ../ex00/Animal.cpp ../ex00/Dog.cpp ../ex00/Cat.cpp
+SRC = main.cpp Brain.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+EX00_SRC = ../ex00/Animal.cpp
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 EX00_OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(EX00_SRC:.cpp=.o)))
