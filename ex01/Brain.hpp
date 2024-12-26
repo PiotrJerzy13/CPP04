@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 
-class Brain {
+class Brain 
+{
 private:
     std::string ideas[100];
 
