@@ -2,17 +2,16 @@
 
 Dog::Dog() 
 {
-    type = "Dog";
-    std::cout << "Dog Constructor called" << std::endl;
+	type = "Dog";
+	std::cout << "Dog Constructor called" << std::endl;
 }
 
 Dog::~Dog() 
 {
-    std::cout << "Dog Destructor called" << std::endl;
+	std::cout << "Dog Destructor called" << std::endl;
 }
 
 void Dog::makeSound() const 
 {
-    std::cout << "Woof! Woof!" << std::endl;
+	std::cout << "Woof! Woof!" << std::endl;
 }
-

@@ -7,13 +7,12 @@
 class WrongAnimal 
 {
 protected:
-    std::string type;
+	std::string type;
 
 public:
-    WrongAnimal();
-    virtual ~WrongAnimal();
-    void makeSound() const;
+	WrongAnimal();
+	virtual ~WrongAnimal();
+	void makeSound() const;
 };
 
 #endif
-

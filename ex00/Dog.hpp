@@ -6,9 +6,9 @@
 class Dog : public Animal 
 {
 public:
-    Dog();
-    ~Dog();
-    void makeSound() const;
+	Dog();
+	~Dog();
+	void makeSound() const override;
 };
 
 #endif

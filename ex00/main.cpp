@@ -6,25 +6,21 @@
 
 int main() 
 {
-    const Animal* meta = new Animal();
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
+	std::unique_ptr<Animal> meta = std::make_unique<Dog>();
+	std::unique_ptr<Animal> dog = std::make_unique<Dog>();
+	std::unique_ptr<Animal> cat = std::make_unique<Cat>();
 
-    std::cout << dog->getType() << " " << std::endl;
-    std::cout << cat->getType() << " " << std::endl;
+	std::cout << dog->getType() << std::endl;
+	std::cout << cat->getType() << std::endl;
 
-    cat->makeSound();
-    dog->makeSound();
-    meta->makeSound();
+	cat->makeSound();
+	dog->makeSound();
+	meta->makeSound();
 
-    delete meta;
-    delete dog;
-    delete cat;
+	const WrongAnimal* wrong = new WrongCat();
+	wrong->makeSound();
 
-    const WrongAnimal* wrong = new WrongCat();
-    wrong->makeSound();
+	delete wrong;
 
-    delete wrong;
-
-    return 0;
+	return 0;
 }

@@ -2,35 +2,34 @@
 
 Animal::Animal() : type("Animal") 
 {
-    std::cout << "Animal Constructor called" << std::endl;
+	std::cout << "Animal Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& other) 
+Animal::Animal(const Animal& other) : type(other.type)
 {
-    *this = other;
-    std::cout << "Animal Copy Constructor called" << std::endl;
+	std::cout << "Animal Copy Constructor called" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other) 
 {
-    if (this != &other) 
+	if (this != &other) 
 	{
-        this->type = other.type;
-    }
-    return *this;
+		type = other.type;
+	}
+	return *this;
 }
 
 Animal::~Animal() 
 {
-    std::cout << "Animal Destructor called" << std::endl;
+	std::cout << "Animal Destructor called" << std::endl;
 }
 
 void Animal::makeSound() const 
 {
-    std::cout << "Animal makes a generic sound!" << std::endl;
+	std::cout << "Animal makes a generic sound!" << std::endl;
 }
 
 std::string Animal::getType() const 
 {
-    return type;
+	return type;
 }
