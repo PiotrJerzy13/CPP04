@@ -1,27 +1,29 @@
-#include "../ex00/Animal.hpp"
-#include "../ex01/Brain.hpp"
-#include "../ex01/Dog.hpp"
-#include "../ex01/Cat.hpp"
+#include "Animal.hpp"
+#include "../ex00/Dog.hpp"
+#include "../ex00/Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main() {
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
-    const WrongAnimal* wrongCat = new WrongCat();
+int main()
+{
+	// const Animal* invalidAnimal = new Animal();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
-    std::cout << dog->getType() << " says: ";
-    dog->makeSound();
+	std::cout << dog->getType() << " says: ";
+	dog->makeSound();
 
-    std::cout << cat->getType() << " says: ";
-    cat->makeSound();
+	std::cout << cat->getType() << " says: ";
+	cat->makeSound();
 
-    std::cout << wrongCat->getType() << " says: ";
-    wrongCat->makeSound();
+	delete dog;
+	delete cat;
 
-    delete dog;
-    delete cat;
-    delete wrongCat;
+	const WrongAnimal* wrongCat = new WrongCat();
+	std::cout << wrongCat->getType() << " says: ";
+	wrongCat->makeSound();
 
-    return 0;
+	delete wrongCat;
+
+	return 0;
 }
