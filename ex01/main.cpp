@@ -1,17 +1,16 @@
 #include "Dog.hpp"
-#include "Cat.hpp"
 
 int main()
 {
-    Dog dog1;
-    dog1.makeSound();
+	Dog dog1;
 
-    Dog dog2 = dog1;
-    dog2.makeSound();
+	dog1.setBrainIdea(0, "Chase the cat");
+	dog1.setBrainIdea(1, "Bark at the mailman");
 
-    Dog dog3;
-    dog3 = dog1;
-    dog3.makeSound();
 
-    return 0;
+	std::cout << "Dog1 Idea 0: " << dog1.getBrainIdea(0) << std::endl;
+	std::cout << "Dog1 Idea 1: " << dog1.getBrainIdea(1) << std::endl;
+
+	return 0;
 }
+

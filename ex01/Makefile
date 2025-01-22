@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -I../ex00
+CFLAGS = -Wall -Werror -Wextra -std=c++17 -I../ex00
 
 NAME = animals
 OBJ_DIR = bin
@@ -10,13 +10,13 @@ EX00_SRC = ../ex00/Animal.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 EX00_OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(EX00_SRC:.cpp=.o)))
 
-all: $(EX00_OBJ) $(NAME)
+all: $(NAME)
 
-$(OBJ_DIR)/%.o: ../ex00/%.cpp
+$(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/%.o: %.cpp
+$(OBJ_DIR)/%.o: ../ex00/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -27,7 +27,6 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@$(MAKE) -C ../ex00 fclean
 	rm -f $(NAME)
 
 re: fclean all
